@@ -25,6 +25,7 @@ As mentioned, the tool is provided as a set of classes. Documentation for each o
 ### Authors
 
 - Ali Mosallaei, [alimos@umich.edu](mailto:alimos@umich.edu)
+- Daniil Voloshin, [daniilv@umich.edu](mailto:daniilv@umich.edu)
 - Dr. James W. Cutler, [jwcutler@umich.edu](mailto:jwcutler@umich.edu)
 
 *TrajVis was developed at the Michigan eXploration Lab, a research lab at the University of Michigan in Ann Arbor, MI. TrajVis was developed with funding in part provided by NASA JPL's Strategic University Research Partnerships (SURP) program.*
