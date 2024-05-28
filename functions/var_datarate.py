@@ -34,7 +34,8 @@ def calculate_link_margin(link_params: LinkBudgetParams, data_rate: float) -> fl
     path_losses = link_params.transmitter_line_loss + FSL + link_params.atmospheric_loss + link_params.reciever_input_loss + link_params.pointing_loss
     P_total = EIRP + link_params.receiver_antenna_gain - path_losses
     T_N = (10**(link_params.receiver_NF/10) - 1)*290
-    T = 10 * np.log10(T_N)
+    T_A = 290
+    T = 10 * np.log10(T_N+T_A)
     G_T = link_params.receiver_antenna_gain - T
     C_N0 = P_total + G_T - link_params.receiver_antenna_gain + 228.6
     R_e = data_rate / link_params.modulation_rate / link_params.computer_imp_efficiency
