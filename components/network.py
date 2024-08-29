@@ -1,5 +1,5 @@
-from components.defaults import *
-from components.obstacle import ObstacleType
+from TrajVis.components.defaults import *
+from TrajVis.components.obstacle import ObstacleType
 import networkx as nx
 import copy
 import random

@@ -1,8 +1,8 @@
-from components.defaults import *
+from TrajVis.components.defaults import *
 import random
 from enum import Enum
 import matplotlib.pyplot as plt
-from functions.var_datarate import data_rate_for_desired_link_margin
+from TrajVis.functions.var_datarate import data_rate_for_desired_link_margin
 from typing import NamedTuple
 
 class LinkBudgetParams(NamedTuple):

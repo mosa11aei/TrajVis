@@ -1,7 +1,7 @@
-from components.defaults import *
+from TrajVis.components.defaults import *
 import random
 from enum import Enum
-from components.windmap import WindMap
+from TrajVis.components.windmap import WindMap
 
 # Balloon class
 class BalloonStatus(Enum):

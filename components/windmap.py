@@ -1,4 +1,4 @@
-from components.defaults import *
+from TrajVis.components.defaults import *
 import random
 
 # Create random vector field. This is determined to be some wind pattern that could exist.

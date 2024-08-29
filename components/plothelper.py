@@ -1,4 +1,4 @@
-from components.defaults import *
+from TrajVis.components.defaults import *
 import matplotlib.pyplot as plt
 
 class PlotHelper:
