@@ -10,28 +10,30 @@ class BalloonStatus(Enum):
     FALL = 2, "Fall"
 
 class Balloon:
-    name = "Balloon"
-    color = "red"
-    
-    coordinates = []
-    altitudes = []
-    current_xy = [0, 0] #0 = x, 1 = y, 2 = z
-    current_v = [0, 0, 0] #0 = v_x, 1 = v_y, 2 = v_z
-    current_alt = 0
-    current_status = BalloonStatus.ASCENT
-    attitudes = []
-    
-    current_time = 0
-    popped_at = 0
-    pop_point = []
-
-    plt_x = []
-    plt_y = []
-
-    wm = WindMap(1, 1, 1)
-    antenna = 0
-    
     def __init__(self, wm, name, color):
+        # set all initial values to None first
+        self.name = None
+        self.color = None
+        
+        self.coordinates = []
+        self.altitudes = []
+        self.current_xy = [0, 0] #0 = x, 1 = y, 2 = z
+        self.current_v = [0, 0, 0] #0 = v_x, 1 = v_y, 2 = v_z
+        self.current_alt = 0
+        self.current_status = BalloonStatus.ASCENT
+        self.attitudes = []
+        
+        self.current_time = 0
+        self.popped_at = 0
+        self.pop_point = []
+
+        self.plt_x = []
+        self.plt_y = []
+
+        self.wm = WindMap(1, 1, 1)
+        self.antenna = 0
+        
+        # set the stuff we need
         self.wm = wm
         self.name = name
         self.color = color

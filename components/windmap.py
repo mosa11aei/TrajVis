@@ -4,11 +4,6 @@ import random
 # Create random vector field. This is determined to be some wind pattern that could exist.
 
 class WindMap:
-    _dimensions = [0,0] # wind map dimensions x,y
-    step = 1 # step between each point on the wind map
-    _compass_matrix = [] # matrix of compass directions per point on windmap (wind direction)
-    _scalar_matrix = [] # matrix of scalar value per point on windmap (wind strength)
-    
     def create_windmap(self):
         for i in range(0, len(self._compass_matrix)):
             for j in range (0, len(self._compass_matrix)):
@@ -78,6 +73,13 @@ class WindMap:
             self._scalar_matrix[:, len(self._compass_matrix) - i] = len(self._compass_matrix)/4
     
     def __init__(self, x, y, step):
+        # set to defaults
+        self._dimensions = [0,0] # wind map dimensions x,y
+        self.step = 1 # step between each point on the wind map
+        self._compass_matrix = [] # matrix of compass directions per point on windmap (wind direction)
+        self._scalar_matrix = [] # matrix of scalar value per point on windmap (wind strength)
+        
+        # actual values
         self._dimensions = [x, y]
         self.step = step
 

@@ -1,9 +1,10 @@
 import matplotlib.pyplot as plt
 
-class DataHandler:
-    network = None
-    
+class DataHandler:    
     def __init__(self, network):
+        self.network = None
+        
+        # set value
         self.network = network
         
     # NOTE: path1 is determined as the reconfigurable path if plotting meaningfuls    

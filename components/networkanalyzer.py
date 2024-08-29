@@ -4,6 +4,7 @@ from enum import Enum
 import matplotlib.pyplot as plt
 from TrajVis.functions.var_datarate import data_rate_for_desired_link_margin
 from typing import NamedTuple
+import networkx as nx
 
 class LinkBudgetParams(NamedTuple):
     transmitter_frequency: float    # in GHz
@@ -28,15 +29,17 @@ class RadioType(Enum):
     TwoWay = 2, "Two Way"
 
 class Antenna:
-    radio_type = RadioType.TwoWay
-    hpbw = 0 # half power beam width angle (https://www.exfo.com/en/resources/glossary/hpbw/), degrees
-    gain = 0 # in dB
-    name = ""
-    freq = 0 # in Mhz
-    sensitvity = 0 # in dBm
-    transmit_power = 0 # in dBm
-    
     def __init__(self, radio_type, hpbw, gain, name, freq, sensitivity, tpwr):
+        # set to defaults for now
+        self.radio_type = RadioType.TwoWay
+        self.hpbw = 0 # half power beam width angle (https://www.exfo.com/en/resources/glossary/hpbw/), degrees
+        self.gain = 0 # in dB
+        self.name = ""
+        self.freq = 0 # in Mhz
+        self.sensitvity = 0 # in dBm
+        self.transmit_power = 0 # in dBm
+        
+        # set actual values
         self.radio_type = radio_type
         self.hpbw = hpbw
         self.gain = gain # in dBi
@@ -46,8 +49,6 @@ class Antenna:
         self.transmit_power = tpwr
         
 class NetworkAnalyzer:
-    _balloons = []
-
     def show_pointing(self, time, *args):
         _dir_plot = plt.figure().add_subplot(projection='3d')
         

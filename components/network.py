@@ -5,28 +5,30 @@ import copy
 import random
 
 class Network:
-    nodes = []
-    connections = {}
-    cg = nx.DiGraph()
-    message_queue = {}
-    stored = []
-    forwarded = 0
-    THRESHHOLD = 3 # in dB
-    reconfigures = []
-    start_node = ''
-    end_node = ''
-    path = []
-    generic_path = []
-    path_weight = 0
-    received_messages = 0
-    sent_messages = 0
-    obstacles = None
-
     def generate_messages(self, balloon, amt):
         for i in range(1, amt):
             self.message_queue[balloon].append("ABCDDEADBEEF")
 
     def __init__(self, *args, start, end, generic_path):
+        # set first to None
+        self.nodes = []
+        self.connections = {}
+        self.cg = nx.DiGraph()
+        self.message_queue = {}
+        self.stored = []
+        self.forwarded = 0
+        self.THRESHHOLD = 3 # in dB
+        self.reconfigures = []
+        self.start_node = ''
+        self.end_node = ''
+        self.path = []
+        self.generic_path = []
+        self.path_weight = 0
+        self.received_messages = 0
+        self.sent_messages = 0
+        self.obstacles = None
+        
+        # set to actual values
         self.nodes = []
         self.path = []
         self.path_weight = 0
