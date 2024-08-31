@@ -1,4 +1,4 @@
-from components.networkanalyzer import Antenna, RadioType
+from TrajVis.components.networkanalyzer import Antenna, RadioType
 
 # Molex strip antenna (with no pointing loss)
 MolexNoPL = Antenna(name="Molex, no Pointing Loss",

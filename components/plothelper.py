@@ -1,19 +1,21 @@
-from components.defaults import *
+from TrajVis.components.defaults import *
 import matplotlib.pyplot as plt
 
 class PlotHelper:
-    _compass_matrix = []
-    _scalar_matrix = []
-    step = 1
-    _plot = plt
-    _plot_balloons = plt
-
-    plt_x = np.zeros(1)
-    plt_y = np.zeros(1)
-    plt_vec_x = np.zeros(1)
-    plt_vec_y = np.zeros(1)
-    
     def __init__(self, wm):
+        # set default values
+        self._compass_matrix = []
+        self._scalar_matrix = []
+        self.step = 1
+        self._plot = plt
+        self._plot_balloons = plt
+
+        self.plt_x = np.zeros(1)
+        self.plt_y = np.zeros(1)
+        self.plt_vec_x = np.zeros(1)
+        self.plt_vec_y = np.zeros(1)
+        
+        # actual values
         self._compass_matrix = wm.compass()
         self._scalar_matrix = wm.scalar()
         self.step = wm.step

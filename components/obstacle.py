@@ -17,9 +17,11 @@ config for DeadNode obstacle:
 """
 
 class Obstacle:
-    otype = None
-    config = {}
     def __init__(self, obstacle_type, config):
+        self.otype = None
+        self.config = {}
+        
+        # set actual value
         self.otype = obstacle_type
 
         if self.otype == ObstacleType.ReceiverPower:
